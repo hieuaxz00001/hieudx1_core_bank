@@ -2,9 +2,9 @@ spring:
   application:
     name: core-banking-service
   datasource:
-    url: jdbc:mysql://localhost:3309/core_bank
-    username: root
-    password: 123456789
+    url: jdbc:mysql://${DB_HOST}/${DB_NAME}?allowPublicKeyRetrieval=true&useSSL=false
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: none
@@ -15,7 +15,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${REGISTRY_HOST}:8761/eureka
     fetch-registry: true
     register-with-eureka: true
   instance:
