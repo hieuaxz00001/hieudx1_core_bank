@@ -1,5 +1,5 @@
 spring:
   cloud:
     config:
-      
-      uri: http://localhost:8090
+      enabled: true
+      uri: http://${CONFIG_HOST}:80
